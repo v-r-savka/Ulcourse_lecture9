@@ -1,0 +1,166 @@
+
+//Second project
+* {
+   // placing Margin to left & right
+   margin: 0px 5px;
+   padding: 0px;
+   box-sizing: border-box;
+
+   body {
+      font-family: sans-serif;
+   }
+}
+
+.container{
+   // Defining height
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+}
+
+.header{
+   display: flex;
+
+   // The border & height
+   
+   height: 10%;
+   align-items: center;
+   justify-content: space-between;
+   
+   // Other selectors are here
+
+   &__logo {
+      font-size: 4vw;
+   }
+
+   &__menu {
+      display: flex;
+      font-size: 2.5vw;
+
+      //to put gap between menu items
+      gap: 15px;
+   }
+}
+
+.main{
+   display: flex;
+   //The border & height
+   height: 80%;
+   
+   // Other selectors are here
+
+         
+
+   &__image {
+      background-image: url(images/my-portrait.JPG);
+      width: 50%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: left center;
+   }
+
+   &__text {
+      // will cover half of screen width
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+
+      // To bring it at the center 
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+
+      //color name
+      span{
+         color: red;
+      }
+      
+      &-1 {
+         font-size: 8vw;
+      }
+
+      &-2,&-3,&-4{
+         font-size: 3vw;
+      }
+   }
+}
+
+.footer{
+      // Border & height
+
+      height: 10%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-right: 10%;
+
+      // Other selectors are here
+
+   [class ^="footer__"] {
+      img {
+         width: 5.3vw;
+      }
+   }
+
+}
+
+
+
+//mobile layout
+
+@media (max-width: 650px) {
+   
+   .header {
+      justify-content: center;
+
+      &__logo {
+         font-size: 40px;
+      }
+
+      &__menu {
+         display: none;
+      }
+   }
+
+   .main {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &__image {
+         height: 200px;
+         width: 200px;
+         background-size: 100%;
+         border-radius: 100%;
+         background-position: center;
+      }
+
+      &__text {
+         width: 100%;
+
+         &__1 {
+            display: none;
+         }
+
+         &__2,&__3,&__4 {
+            font-size: 30px;
+         }
+      }
+      
+   }
+
+   .footer {
+      justify-content: center;
+      margin: 0px;
+
+      [class^="footer__"] {
+
+      // Resizing images for mobile layout
+         img {
+            width: 45px;
+            height: 45px;
+         }
+      }
+   } 
+}
